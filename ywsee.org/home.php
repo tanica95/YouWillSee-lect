@@ -12,8 +12,8 @@
     rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-    <script type="text/javascript" src="node_modules/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="sketch.js"></script>
+  <script type="text/javascript" src="node_modules/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="sketch.js"></script>
 
 </head>
 
@@ -166,13 +166,9 @@
 // num categorie scelte da passare a json
  
   $("a.href").click(function(){ // qui gli dici di pigliare tutti i link con classe "link"
-         var url = "analytics.php"; // pagina dove processerai i dati con PHP
-         var tanja = JSON.parse(sessionStorage.getItem("tanjaData"));
-          
-
-         });
-        
-  
+    var url = "analytics.php"; // pagina dove processerai i dati con PHP
+    var tanja = JSON.parse(sessionStorage.getItem("tanjaData"));
+  });
   
   //fine sessione
   function stop() {
@@ -183,24 +179,9 @@
         url:url,
         data: data
       });
-
     });
   };
   
-  //  const osc = new OSC();
-  //  osc.open();
-
-  // function increment() {
-  //   sessionStorage.link_visited++;
-  //    const message_visited = new OSC.Message('/visited', sessionStorage.link_visited);
-  //    osc.send(message_visited);
-  // }
-
-  // function stop() {
-  //   sessionStorage.link_visited = 0;
-  //   const message_session = new OSC.Message('/session', 0);
-  //    osc.send(message_session);
-  // }
 </script>
 
 </html>
