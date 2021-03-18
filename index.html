@@ -16,6 +16,7 @@
     <script src="https://raw.githubusercontent.com/Smilebags/p5.dimensions.js/master/libraries/p5.dimensions.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
     <script type="text/javascript" src="sketch.js"></script>
+  
 
   </head>
 
@@ -31,43 +32,33 @@
            Click start to begin your experience. <br>
            When you will finish your reading please press the button <span class="bold">stop reading</span> <br>that you will find in the following page.
          </p>
-          <!-- <a href="./home.php" > onclick="start_session()"> --> -->
-          <a href="index.html" ><div class="stop">
+          <!-- <a href="./home.php" > onclick="start_session()"> --> 
+          <a href="home.php" ><div class="stop">
              start</div>
         </a>
        </div>
        <div id="sketch-holder">
       </div>
        
-       <!-- <script type="text/javascript" src="node_modules/jquery-3.6.0.min.js"></script>
-       <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
-       <script type="text/javascript" src="sketch.js"></script> -->
+      
        <script>
-         var tanja= {
-            start : 0,
-            stop : 0, 
-            notizie :0,
-            politica : "Clear My Data Now",
-            economia : 0,
-            mondo : 0,
-            cronaca :0,
-            sport : 0,
-            scienza_tecnologia :0,
-            cultura : 0,
-            category : []
-        }
-
-       console.log(tanja);
-       sessionStorage.clear(); 
-       sessionStorage.setItem('tanjaData', JSON.stringify(tanja));
        
-      //  function start_session(){
-      //   $("a.href").val(){
-         $("a.href").click(function(){ // qui gli dici di pigliare tutti i link con classe "link"
-          start_session();
+       sessionStorage.clear(); 
+       sessionStorage.setItem('start', '0');
+       sessionStorage.setItem('stop', '1');
+       sessionStorage.setItem('notizie', '0');
+       sessionStorage.setItem('politica', '0');
+       sessionStorage.setItem('economia', '0');
+       sessionStorage.setItem('mondo', '0');
+       sessionStorage.setItem('cronaca', '0');
+       sessionStorage.setItem('sport','0');
+       sessionStorage.setItem('scienza_tenologia','0');
+       sessionStorage.setItem('cultura','0');
 
-          var start_stop = $.getJSON(ajax_bridge.json)
-         });
+             //  function start_session(){
+          
+         
+         
        </script>
     </main>
     <footer>

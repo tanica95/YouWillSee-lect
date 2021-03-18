@@ -142,6 +142,9 @@
         </section>
 
       </div>
+      </div>
+       <div id="sketch-holder">
+      </div>
 
       <a href="./index.html" , onclick="stop()">
         <div class="stop">
