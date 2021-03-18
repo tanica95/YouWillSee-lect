@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+  	<meta charset="UTF-8">
+  	<title>YWS</title>
+
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+    <script type="text/javascript" src="node_modules/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script> -->
+    <script type="text/javascript" src="p5.js"></script>
+    <script type="text/javascript" src="p5.easycam.js"></script>
+    <script src="https://raw.githubusercontent.com/Smilebags/p5.dimensions.js/master/libraries/p5.dimensions.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+    <script type="text/javascript" src="sketch.js"></script>
+
+  </head>
+
+  <body>
+    <article> You Will See(lect)
+    </article>
+
+    <main>
+       <div class="middle-box">
+         <h1>YOU WILL SEE NEWS</h1>
+         <h3 class="welcome">WELCOME TO THIS NEW PLATFORM</h3>
+         <p class="light">Feel free to read the news.
+           Click start to begin your experience. <br>
+           When you will finish your reading please press the button <span class="bold">stop reading</span> <br>that you will find in the following page.
+         </p>
+          <!-- <a href="./home.php" > onclick="start_session()"> --> -->
+          <a href="index.html" ><div class="stop">
+             start</div>
+        </a>
+       </div>
+       <div id="sketch-holder">
+      </div>
+       
+       <!-- <script type="text/javascript" src="node_modules/jquery-3.6.0.min.js"></script>
+       <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+       <script type="text/javascript" src="sketch.js"></script> -->
+       <script>
+         var tanja= {
+            start : 0,
+            stop : 0, 
+            notizie :0,
+            politica : "Clear My Data Now",
+            economia : 0,
+            mondo : 0,
+            cronaca :0,
+            sport : 0,
+            scienza_tecnologia :0,
+            cultura : 0,
+            category : []
+        }
+
+       console.log(tanja);
+       sessionStorage.clear(); 
+       sessionStorage.setItem('tanjaData', JSON.stringify(tanja));
+       
+      //  function start_session(){
+      //   $("a.href").val(){
+         $("a.href").click(function(){ // qui gli dici di pigliare tutti i link con classe "link"
+          start_session();
+
+          var start_stop = $.getJSON(ajax_bridge.json)
+
+          
+        
+        //  var url = "analytics.php"; // pagina dove processerai i dati con PHP
+
+        //     var data = {} // crei un json vuoto
+        //     data.text = $(this).text(); // pigli il testo del link e lo butti nel json
+        //     data.url = $(this).attr("href"); // pigli il link e lo butti nel json
+
+        //     $.ajax({
+        //       type: "POST",
+        //       url: url,
+        //       data: data
+        //     });
+
+         });
+        
+       </script>
+
+
+       <!-- //
+       // <script src="node_modules/osc-js/lib/osc.min.js"></script>
+       // <script>
+       // sessionStorage.clear();
+       // const osc = new OSC();
+       // osc.open();
+       // </script>
+       // <script>
+       // function start_session() {
+       //   const message_session = new OSC.Message('/session', 1);
+       //   osc.send(message_session);
+       //   sessionStorage.link_visited = 0;
+       // }
+       // </script> -->
+
+    </main>
+    <footer>
+      <h3> Tanja Marmai</h3>
+    </footer>
+  </body>
+
+</html>
