@@ -5,6 +5,12 @@ include 'headNews.php';
   if (sessionStorage.getItem('notizie') == '0') {
     sessionStorage.setItem('notizie', '1')
   }
+
+  
+  $('a.href')click(function (){
+    var n = Number(sessionStorage.getItem('Nnews'));
+    sessionStorage.setItem('Nnews', n + 1);
+  });
       </script>
 <h1><?php echo ucfirst($title) ?><h1>
 
