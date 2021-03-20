@@ -13,6 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <script type="text/javascript" src="node_modules/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="p5.js"></script>
+  <script type="text/javascript" src="p5.dom.js"></script>
   <script type="text/javascript" src="sketch.js"></script>
 
 </head>

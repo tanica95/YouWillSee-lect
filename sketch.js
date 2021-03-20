@@ -29,7 +29,7 @@ function setup() {
 }
 
 function draw() {
-  var n = Number(sessionStorage.getItem('Nnews'));
+
   if (sessionStorage.getItem('start') == '1') {
     orbitControl();
     frameRate(10);
@@ -58,11 +58,12 @@ function draw() {
      //   case 1:
         //-----nucleo centrale_1
        if (sessionStorage.getItem('notizie') == '1') {
-          console.log(tanja.notizie);
+          console.log('notizie');
         push();
           rotateY(-frameCount*radians(1.5));
           fill(28, 70, 186);
           noStroke();
+          var n = Number(sessionStorage.getItem('Nnews'));
           scale(n);
           translate(v1.x/1.5,v1.y/1.5,v1.z/2);
           translate(-5,-5,-5);
@@ -72,7 +73,7 @@ function draw() {
         }
         //-----nucleo centrale_2
        if (sessionStorage.getItem('politica') == '1') {
-          console.log(tanja.politica);
+          console.log('politica');
         push();
           rotateZ(frameCount*radians(1.8));
           fill(89, 198, 217, 80); 
@@ -88,7 +89,7 @@ function draw() {
       // //case 3:
       //-----nucleo centrale_3
        if (sessionStorage.getItem('economia') == '1') {
-        console.log(tanja.economia);
+        console.log('economia');
         push();
           rotateX(-frameCount*radians(0.9));
           fill(37, 189, 245, 80);
@@ -104,7 +105,7 @@ function draw() {
       //case 4:
       //-----nucleo centrale_4
        if (sessionStorage.getItem('mondo') == '1') {
-        console.log(tanja.mondo);
+        console.log('mondo');
         push();
           rotateZ(-frameCount*radians(1.9));
           fill(16, 72, 227, 80);
@@ -120,7 +121,7 @@ function draw() {
       //case 5:
       //----particellare_1
       if (sessionStorage.getItem('cronaca') == '1') {
-        console.log(tanja.cronaca);
+        console.log('cronaca');
         push();
         noStroke();
         translate(p5.Vector.fromAngles(50+v1.x*2,50+v1.y*2,50+v1.z*2));
@@ -136,7 +137,7 @@ function draw() {
       // case 6:
       //----particellare_2
       if (sessionStorage.getItem('sport') == '1') {
-        console.log(tanja.sport);
+        console.log('sport');
         push();
         noStroke();
         rotate(280);
@@ -156,7 +157,7 @@ function draw() {
       //case 7:
       //-----particellare_1piccolo
       if (sessionStorage.getItem('scienza_tenologia') == '1') {
-        console.log(tanja.scienza_tenologia);
+        console.log('scienza_tenologia');
         push();
 
         noStroke();
@@ -176,9 +177,10 @@ function draw() {
       //case 8:
       //-----particellare_2piccolo
       if (sessionStorage.getItem('cultura') == '1') {
-        console.log(tanja.cultura);
+        console.log('cultura');
         push();
-        rotate(300);
+        translate(0,0,20);
+        rotate(280);
         noStroke();
         rotateX(frameCount*radians(-1.9)*0.1);
         rotateY(frameCount*radians(-1.9)*0.1);
@@ -208,7 +210,7 @@ function draw() {
           noStroke();
           rotateX(frameCount/10);
           rotateZ(frameCount/10);
-          translate(20,20,v2.z);
+          translate(20,20,v1.z);
           //translate(v1.x*2.3, v1.y*2.5, v1.z/2.2);
           ellipsoid(5,5,5,10,10);
           //rotateX(radians(sin));
