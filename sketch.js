@@ -36,7 +36,7 @@ function draw() {
     ambientLight(180,150,200);
     pointLight(200,200,250, 0, height/2, -50);
 
-    console.log(tanja.start);
+    console.log('start');
 
     // equazione di Lorenz
     var dt = 0.01;
@@ -53,9 +53,11 @@ function draw() {
     // loop da punti a vettori 
     points.forEach(function (v1) {
 
-      switch (news) {
-        case 1:
+     // switch (news) {
+     //   case 1:
         //-----nucleo centrale_1
+       if (sessionStorage.getItem('notizie') == '1') {
+          console.log(tanja.notizie);
         push();
           rotateY(-frameCount*radians(1.5));
           fill(28, 70, 186);
@@ -66,8 +68,10 @@ function draw() {
           ambientMaterial(28, 70, 186, 100);
           ellipsoid(5,5,5,10,10);
         pop();
-
+        }
         //-----nucleo centrale_2
+       if (sessionStorage.getItem('politica') == '1') {
+          console.log(tanja.politica);
         push();
           rotateZ(frameCount*radians(1.8));
           fill(89, 198, 217, 80); 
@@ -78,35 +82,44 @@ function draw() {
           ambientMaterial(89, 198, 217, 120);
           ellipsoid(5,5,5,10,10);
         pop();
+        }
       //break;
       // //case 3:
-      // //-----nucleo centrale_3
+      //-----nucleo centrale_3
+       if (sessionStorage.getItem('economia') == '1') {
+        console.log(tanja.economia);
         push();
-        rotateX(-frameCount*radians(0.9));
-        fill(37, 189, 245, 80);
-        noStroke();
-        scale(2);
-        translate(v1.x/2, v1.y/2, v1.z/2);
-        translate(-5,-5,-5);
-        ambientMaterial(37, 189, 245, 120);
-        ellipsoid(5,5,5,10,10);
+          rotateX(-frameCount*radians(0.9));
+          fill(37, 189, 245, 80);
+          noStroke();
+          scale(2);
+          translate(v1.x/2, v1.y/2, v1.z/2);
+          translate(-5,-5,-5);
+          ambientMaterial(37, 189, 245, 120);
+          ellipsoid(5,5,5,10,10);
         pop();
+        }
       //break;
       //case 4:
       //-----nucleo centrale_4
+       if (sessionStorage.getItem('mondo') == '1') {
+        console.log(tanja.mondo);
         push();
-        rotateZ(-frameCount*radians(1.9));
-        fill(16, 72, 227, 80);
-        noStroke();
-        scale(2);
-        translate(v1.x/2, v1.y/2, v1.z/2);
-        translate(-5,-5,-5);
-        ambientMaterial(16, 72, 227, 120);
-        ellipsoid(5,5,5,10,10);
+          rotateZ(-frameCount*radians(1.9));
+          fill(16, 72, 227, 80);
+          noStroke();
+          scale(2);
+          translate(v1.x/2, v1.y/2, v1.z/2);
+          translate(-5,-5,-5);
+          ambientMaterial(16, 72, 227, 120);
+          ellipsoid(5,5,5,10,10);
         pop();
+        }
       //break;
       //case 5:
       //----particellare_1
+      if (sessionStorage.getItem('cronaca') == '1') {
+        console.log(tanja.cronaca);
         push();
         noStroke();
         translate(p5.Vector.fromAngles(50+v1.x*2,50+v1.y*2,50+v1.z*2));
@@ -117,9 +130,12 @@ function draw() {
           hu = 0;
         }
         pop();
+      }
       //break;
       // case 6:
       //----particellare_2
+      if (sessionStorage.getItem('sport') == '1') {
+        console.log(tanja.sport);
         push();
         noStroke();
         rotate(280);
@@ -134,9 +150,12 @@ function draw() {
           hu = 0;
         }
         pop();
+      }
       //break;
       //case 7:
       //-----particellare_1piccolo
+      if (sessionStorage.getItem('scienza_tenologia') == '1') {
+        console.log(tanja.scienza_tenologia);
         push();
 
         noStroke();
@@ -151,23 +170,50 @@ function draw() {
           hu = 0;
         }
         pop();
+      }
       //break;
       //case 8:
+      //-----particellare_2piccolo
+      if (sessionStorage.getItem('cultura') == '1') {
+        console.log(tanja.cultura);
+        push();
+        rotate(300);
+        noStroke();
+        rotateX(frameCount*radians(-1.9)*0.1);
+        rotateY(frameCount*radians(-1.9)*0.1);
+        rotateZ(frameCount*radians(-1.9)*0.1);
+        translate(p5.Vector.fromAngles(30+v1.x,30+v1.y,30+v1.z));
+        ambientMaterial( 20,80,hu,60);
+        sphere(1.5);
+        hu += 1;
+        if (hu > 255) {
+          hu = 0;
+        }
+        pop();
+      }
+
+
+
+
+
+
+
       //----elettrone 1
         for (let i =1; i<frameCount; i= i+10){
         push();
+        translate(0, 0, -80);
           fill(200, 119, 179, 50);
           ambientMaterial( 200, 119, 179, 50);
           noStroke();
           rotateX(frameCount/10);
           rotateZ(frameCount/10);
-          translate(20,20,-20);
+          translate(20,20,v2.z);
           //translate(v1.x*2.3, v1.y*2.5, v1.z/2.2);
-          ellipsoid(10,10,10,10,10);
+          ellipsoid(5,5,5,10,10);
           //rotateX(radians(sin));
           pop();	
         }
-      }//switch
+    //  }//switch
     
      }); //end forEach
   }//end if start

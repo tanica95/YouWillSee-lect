@@ -1,7 +1,11 @@
 <?php
 include 'headNews.php';
 ?>
-
+ <script type="text/javascript">
+  if (sessionStorage.getItem('scienza_tenologia') == '0') {
+    sessionStorage.setItem('scienza_tenologia', '1')
+  }
+      </script>
 <h1><?php echo ucfirst($title) ?><h1>
 
   <?php

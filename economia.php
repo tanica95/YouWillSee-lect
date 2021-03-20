@@ -1,7 +1,11 @@
 <?php
 include 'headNews.php';
 ?>
-
+ <script type="text/javascript">
+  if (sessionStorage.getItem('economia') == '0') {
+    sessionStorage.setItem('economia', '1')
+  }
+      </script>
 <h1><?php echo ucfirst($title) ?><h1>
 
   <?php
