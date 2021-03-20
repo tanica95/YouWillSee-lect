@@ -49,5 +49,6 @@ $( ".newsbody" ).each(function() {
     }
 });
 
+
 </script>
-</html>
+</html>

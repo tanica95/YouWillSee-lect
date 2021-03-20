@@ -29,6 +29,7 @@ function setup() {
 }
 
 function draw() {
+  var n = Number(sessionStorage.getItem('Nnews'));
   if (sessionStorage.getItem('start') == '1') {
     orbitControl();
     frameRate(10);
@@ -62,7 +63,7 @@ function draw() {
           rotateY(-frameCount*radians(1.5));
           fill(28, 70, 186);
           noStroke();
-          scale(2);
+          scale(n);
           translate(v1.x/1.5,v1.y/1.5,v1.z/2);
           translate(-5,-5,-5);
           ambientMaterial(28, 70, 186, 100);
