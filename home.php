@@ -172,7 +172,7 @@
  
   $("a.href").click(function(){ // qui gli dici di pigliare tutti i link con classe "link"
     var url = "analytics.php"; // pagina dove processerai i dati con PHP
-    var tanja = JSON.parse(sessionStorage.getItem("tanjaData"));
+    var tanja = JSON.parse(localStorage.getItem("tanjaData"));
   });
   
   //fine sessione

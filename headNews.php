@@ -18,7 +18,7 @@ $title = ucfirst($_GET['title']);
 
  <body>
  <script type="text/javascript">
-  if (sessionStorage.getItem('start') == '0') {
-    sessionStorage.setItem('start', '1')
+  if (localStorage.getItem('start') == '0') {
+    localStorage.setItem('start', '1')
   }
       </script>

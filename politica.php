@@ -2,8 +2,8 @@
 include 'headNews.php';
 ?>
  <script type="text/javascript">
-  if (sessionStorage.getItem('politica') == '0') {
-    sessionStorage.setItem('politica', '1')
+  if (localStorage.getItem('politica') == '0') {
+    localStorage.setItem('politica', '1')
   }
       </script>
 

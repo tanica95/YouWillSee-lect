@@ -30,7 +30,7 @@ function setup() {
 
 function draw() {
 
-  if (sessionStorage.getItem('start') == '1') {
+  if (localStorage.getItem('start') == '1') {
     orbitControl();
     frameRate(10);
     background(204, 255, 255);
@@ -57,13 +57,13 @@ function draw() {
      // switch (news) {
      //   case 1:
         //-----nucleo centrale_1
-       if (sessionStorage.getItem('notizie') == '1') {
+       if (localStorage.getItem('notizie') == '1') {
           console.log('notizie');
         push();
           rotateY(-frameCount*radians(1.5));
           fill(28, 70, 186);
           noStroke();
-          var n = Number(sessionStorage.getItem('Nnews'));
+          var n = Number(localStorage.getItem('Nnews'));
           scale(n);
           translate(v1.x/1.5,v1.y/1.5,v1.z/2);
           translate(-5,-5,-5);
@@ -72,7 +72,7 @@ function draw() {
         pop();
         }
         //-----nucleo centrale_2
-       if (sessionStorage.getItem('politica') == '1') {
+       if (localStorage.getItem('politica') == '1') {
           console.log('politica');
         push();
           rotateZ(frameCount*radians(1.8));
@@ -88,7 +88,7 @@ function draw() {
       //break;
       // //case 3:
       //-----nucleo centrale_3
-       if (sessionStorage.getItem('economia') == '1') {
+       if (localStorage.getItem('economia') == '1') {
         console.log('economia');
         push();
           rotateX(-frameCount*radians(0.9));
@@ -104,7 +104,7 @@ function draw() {
       //break;
       //case 4:
       //-----nucleo centrale_4
-       if (sessionStorage.getItem('mondo') == '1') {
+       if (localStorage.getItem('mondo') == '1') {
         console.log('mondo');
         push();
           rotateZ(-frameCount*radians(1.9));
@@ -120,7 +120,7 @@ function draw() {
       //break;
       //case 5:
       //----particellare_1
-      if (sessionStorage.getItem('cronaca') == '1') {
+      if (localStorage.getItem('cronaca') == '1') {
         console.log('cronaca');
         push();
         noStroke();
@@ -136,7 +136,7 @@ function draw() {
       //break;
       // case 6:
       //----particellare_2
-      if (sessionStorage.getItem('sport') == '1') {
+      if (localStorage.getItem('sport') == '1') {
         console.log('sport');
         push();
         noStroke();
@@ -156,7 +156,7 @@ function draw() {
       //break;
       //case 7:
       //-----particellare_1piccolo
-      if (sessionStorage.getItem('scienza_tenologia') == '1') {
+      if (localStorage.getItem('scienza_tenologia') == '1') {
         console.log('scienza_tenologia');
         push();
 
@@ -176,7 +176,7 @@ function draw() {
       //break;
       //case 8:
       //-----particellare_2piccolo
-      if (sessionStorage.getItem('cultura') == '1') {
+      if (localStorage.getItem('cultura') == '1') {
         console.log('cultura');
         push();
         translate(0,0,20);

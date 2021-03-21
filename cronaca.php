@@ -2,8 +2,8 @@
 include 'headNews.php';
 ?>
  <script type="text/javascript">
-  if (sessionStorage.getItem('cronaca') == '0') {
-    sessionStorage.setItem('cronaca', '1')
+  if (localStorage.getItem('cronaca') == '0') {
+    localStorage.setItem('cronaca', '1')
   }
       </script>
 <h1><?php echo ucfirst($title) ?><h1>
