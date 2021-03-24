@@ -170,10 +170,10 @@
 
 // num categorie scelte da passare a json
  
-  $("a.href").click(function(){ // qui gli dici di pigliare tutti i link con classe "link"
-    var url = "analytics.php"; // pagina dove processerai i dati con PHP
-    var tanja = JSON.parse(localStorage.getItem("tanjaData"));
-  });
+  // $("a.href").click(function(){ // qui gli dici di pigliare tutti i link con classe "link"
+  //   var url = "analytics.php"; // pagina dove processerai i dati con PHP
+  //   var tanja = JSON.parse(localStorage.getItem("tanjaData"));
+  // });
   
   //fine sessione
   function stop() {
