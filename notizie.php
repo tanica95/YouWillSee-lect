@@ -1,14 +1,14 @@
 <?php
 include 'headNews.php';
 ?>
-<script type="text/javascript" src="node_modules/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="lib/node_modules/jquery-3.6.0.min.js"></script>
  <script type="text/javascript">
   if (localStorage.getItem('notizie') == '0') {
     localStorage.setItem('notizie', '1')
   }
 
   
-  $('a').click(function (){
+  $(this).click(function (){
     var n = Number(localStorage.getItem('Nnews'));
     localStorage.setItem('Nnews', n + 1);
     console.log(n);

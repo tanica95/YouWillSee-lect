@@ -1,10 +1,16 @@
 <?php
 include 'headNews.php';
 ?>
+<script type="text/javascript" src="lib/node_modules/jquery-3.6.0.min.js"></script>
  <script type="text/javascript">
   if (localStorage.getItem('cultura') == '0') {
     localStorage.setItem('cultura', '1')
   }
+  $(this).click(function (){
+    var cu = Number(localStorage.getItem('Cunews'));
+    localStorage.setItem('Cunews', n + 1);
+    console.log(n);
+  });
       </script>
 <h1><?php echo ucfirst($title) ?><h1>
   <?php
