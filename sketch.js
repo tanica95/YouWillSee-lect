@@ -49,13 +49,23 @@ function draw() {
     z = z + dz;
 
     let hu = 0;
+    //var numero notizie lette
+
+    var n = map(Number(localStorage.getItem('Nnews')), 0, 8, 0.5,3);
+    var p = Number(localStorage.getItem('Pnews'));
+    var e = Number(localStorage.getItem('Enews'));
+    var m = Number(localStorage.getItem('Mnews'));
+    var cr = Number(localStorage.getItem('Crnews'));
+    var s = Number(localStorage.getItem('Snews'));
+    var st = Number(localStorage.getItem('Stnews'));
+    var cu = Number(localStorage.getItem('Cunews'));
+    
     //da punti a vettori 
     points.push(createVector(x, y, z));
     // loop da punti a vettori 
     points.forEach(function (v1) {
 
-     // switch (news) {
-     //   case 1:
+     
         //-----nucleo centrale_1
        if (localStorage.getItem('notizie') == '1') {
           console.log('notizie');
@@ -63,7 +73,7 @@ function draw() {
           rotateY(-frameCount*radians(1.5));
           fill(28, 70, 186);
           noStroke();
-          var n = Number(localStorage.getItem('Nnews'));
+         // var n = Number(localStorage.getItem('Nnews'));
           scale(n);
           translate(v1.x/1.5,v1.y/1.5,v1.z/2);
           translate(-5,-5,-5);
@@ -79,14 +89,13 @@ function draw() {
           fill(89, 198, 217, 80); 
           noStroke();
           scale(2);
-          translate(v1.x/2, v1.y/2, v1.z/2);
-          translate(-5,-7,-5);
+          translate(v1.x/2+p, v1.y/2+p, v1.z/2+p);
+          translate(p,p,-5);
           ambientMaterial(89, 198, 217, 120);
           ellipsoid(5,5,5,10,10);
         pop();
         }
-      //break;
-      // //case 3:
+    
       //-----nucleo centrale_3
        if (localStorage.getItem('economia') == '1') {
         console.log('economia');
@@ -101,8 +110,7 @@ function draw() {
           ellipsoid(5,5,5,10,10);
         pop();
         }
-      //break;
-      //case 4:
+     
       //-----nucleo centrale_4
        if (localStorage.getItem('mondo') == '1') {
         console.log('mondo');
@@ -117,8 +125,7 @@ function draw() {
           ellipsoid(5,5,5,10,10);
         pop();
         }
-      //break;
-      //case 5:
+      
       //----particellare_1
       if (localStorage.getItem('cronaca') == '1') {
         console.log('cronaca');
@@ -133,8 +140,7 @@ function draw() {
         }
         pop();
       }
-      //break;
-      // case 6:
+     
       //----particellare_2
       if (localStorage.getItem('sport') == '1') {
         console.log('sport');
@@ -153,8 +159,7 @@ function draw() {
         }
         pop();
       }
-      //break;
-      //case 7:
+ 
       //-----particellare_1piccolo
       if (localStorage.getItem('scienza_tenologia') == '1') {
         console.log('scienza_tenologia');
@@ -173,8 +178,7 @@ function draw() {
         }
         pop();
       }
-      //break;
-      //case 8:
+
       //-----particellare_2piccolo
       if (localStorage.getItem('cultura') == '1') {
         console.log('cultura');
