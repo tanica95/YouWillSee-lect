@@ -19,6 +19,6 @@ $title = ucfirst($_GET['title']);
  <body>
  <script type="text/javascript">
   if (localStorage.getItem('start') == '0') {
-    localStorage.setItem('start', '1')
+    localStorage.setItem('start', '1');
   }
       </script>

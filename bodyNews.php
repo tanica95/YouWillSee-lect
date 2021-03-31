@@ -12,10 +12,10 @@
                         <p class="newsbody"><?php echo $News->content ?><span class="newsauthor"><?php echo $News->author ?></span></p>
                         <p class="date"><?php echo $News->publishedAt ?></p>        
                     </div>
-                </a>
+                </a> 
 <?php       } 
 	$i++;
-   }
+   } 
     
   ?>
 
@@ -33,7 +33,7 @@ var req = new Request(url);
 
 fetch(req)
     .then(function(response) {
-        console.log(response.json());
+        //console.log(response.json());
     })
 
 

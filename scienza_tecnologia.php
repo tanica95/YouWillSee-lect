@@ -7,9 +7,9 @@ include 'headNews.php';
     localStorage.setItem('scienza_tenologia', '1')
   }
   $(this).click(function (){
-    var n = Number(localStorage.getItem('Stnews'));
-    localStorage.setItem('Stnews', n + 1);
-    console.log(n);
+    var st = Number(localStorage.getItem('Stnews'));
+    localStorage.setItem('Stnews', st + 1);
+    console.log(localStorage.getItem('Stnews'));
   });
       </script>
 <h1><?php echo ucfirst($title) ?><h1>

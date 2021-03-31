@@ -7,12 +7,11 @@ include 'headNews.php';
     localStorage.setItem('economia', '1')
   }
 
-  $(this).click(function (){
+  $(this).click(function() {
     var e = Number(localStorage.getItem('Enews'));
-    localStorage.setItem('Enews', n + 1);
-    console.log(n);
+    localStorage.setItem('Enews', e + 1);
+    console.log(localStorage.getItem('Enews'));
   });
-
       </script>
 <h1><?php echo ucfirst($title) ?><h1>
 

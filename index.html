@@ -1,77 +1,73 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-  	<meta charset="UTF-8">
-  	<title>YWS</title>
 
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<link rel="stylesheet" href="css/main.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+<head>
+  <meta charset="UTF-8">
+  <title>YWS</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-    <script type="text/javascript" src="lib/node_modules/jquery-3.6.0.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script> -->
-    <script type="text/javascript" src="lib/p5.js"></script>
-    <script type="text/javascript" src="lib/p5.easycam.js"></script>
-    <script src="https://raw.githubusercontent.com/Smilebags/p5.dimensions.js/master/libraries/p5.dimensions.js"></script>
-    <script type="text/javascript" src="lib/p5.dom.js"></script>
-    <script type="text/javascript" src="sketch.js"></script>
-  
+  <script type="text/javascript" src="lib/node_modules/jquery-3.6.0.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script> -->
+  <script type="text/javascript" src="lib/p5.js"></script>
+  <script type="text/javascript" src="lib/p5.easycam.js"></script>
+  <script src="https://raw.githubusercontent.com/Smilebags/p5.dimensions.js/master/libraries/p5.dimensions.js"></script>
+  <script type="text/javascript" src="lib/p5.dom.js"></script>
+  <script type="text/javascript" src="sketch.js"></script>
 
-  </head>
 
-  <body>
-    <article> You Will See(lect)
-    </article>
+</head>
 
-    <main>
-       <div class="middle-box">
-         <h1>YOU WILL SEE NEWS</h1>
-         <h3 class="welcome">WELCOME TO THIS NEW PLATFORM</h3>
-         <p class="light">Feel free to read the news.
-           Click start to begin your experience. <br>
-           When you will finish your reading please press the button <span class="bold">stop reading</span> <br>that you will find in the following page.
-         </p>
-          <!-- <a href="./home.php" > onclick="start_session()"> --> 
-          <a href="home.php" ><div class="stop">
-             start</div>
-        </a>
-       <!-- </div>
+<body>
+  <article> You Will See(lect)
+  </article>
+
+  <main>
+    <div class="middle-box">
+      <h1>YOU WILL SEE NEWS</h1>
+      <h3 class="welcome">WELCOME TO THIS NEW PLATFORM</h3>
+      <p class="light">Feel free to read the news.
+        Click start to begin your experience. <br>
+        When you will finish your reading please press the button <span class="bold">stop reading</span> <br>that you
+        will find in the following page.
+      </p>
+      <!-- <a href="./home.php" > onclick="start_session()"> -->
+      <a href="home.php">
+        <div class="stop">
+          start</div>
+      </a>
+      <!-- </div>
        <div id="sketch-holder">
       </div> -->
-       
-      
-       <script>
-       
-       localStorage.clear(); 
-       localStorage.setItem('start', '0');
-       localStorage.setItem('stop', '1');
-       localStorage.setItem('notizie', '0');
-       localStorage.setItem('politica', '0');
-       localStorage.setItem('economia', '0');
-       localStorage.setItem('mondo', '0');
-       localStorage.setItem('cronaca', '0');
-       localStorage.setItem('sport','0');
-       localStorage.setItem('scienza_tenologia','0');
-       localStorage.setItem('cultura','0');
-       localStorage.setItem('Nnews', '0');
-       localStorage.setItem('Pnews', '0');
-       localStorage.setItem('Enews', '0');
-       localStorage.setItem('Mnews', '0');
-       localStorage.setItem('Crnews', '0');
-       localStorage.setItem('Snews', '0');
-       localStorage.setItem('Stnews', '0');
-       localStorage.setItem('Cunews', '0');
 
+      <script>
+        localStorage.clear();
+        localStorage.setItem('start', '0');
+        localStorage.setItem('stop', '1');
+        localStorage.setItem('notizie', '0');
+        localStorage.setItem('politica', '0');
+        localStorage.setItem('economia', '0');
+        localStorage.setItem('mondo', '0');
+        localStorage.setItem('cronaca', '0');
+        localStorage.setItem('sport', '0');
+        localStorage.setItem('scienza_tenologia', '0');
+        localStorage.setItem('cultura', '0');
+        localStorage.setItem('Nnews', '0');
+        localStorage.setItem('Pnews', '0');
+        localStorage.setItem('Enews', '0');
+        localStorage.setItem('Mnews', '0');
+        localStorage.setItem('Crnews', '0');
+        localStorage.setItem('Snews', '0');
+        localStorage.setItem('Stnews', '0');
+        localStorage.setItem('Cunews', '0');
+      </script>
+  </main>
+  <footer>
+    <h3> Tanja Marmai</h3>
+  </footer>
+</body>
 
-             //  function start_session(){
-          
-         
-         
-       </script>
-    </main>
-    <footer>
-      <h3> Tanja Marmai</h3>
-    </footer>
-  </body>
 </html>

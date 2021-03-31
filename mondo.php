@@ -7,9 +7,9 @@ include 'headNews.php';
     localStorage.setItem('mondo', '1')
   }
   $(this).click(function (){
-    var n = Number(localStorage.getItem('Mnews'));
-    localStorage.setItem('Mnews', n + 1);
-    console.log(n);
+    var m = Number(localStorage.getItem('Mnews'));
+    localStorage.setItem('Mnews', m + 1);
+    console.log(localStorage.getItem('Mnews'));
   });
       </script>
 <h1><?php echo ucfirst($title) ?><h1>

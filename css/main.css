@@ -21,7 +21,7 @@ main {
   width: 100%;
   /* height: 90%; */
   font-weight:normal;
-  background-color: #f1f1f1;
+  background-color: #fff0f9;
   text-align: center;
   padding-bottom: 20px;
 }
@@ -78,7 +78,7 @@ a{
 }
 
 .line a:hover {
-  background-color: #e6e6e6;
+  background-color: #daeefc;
 }
 
 .wrapper a .box{
@@ -96,9 +96,9 @@ a{
   padding: 4px 0px;
 }
 
-.wrapper a .box .copy:hover{
+/* .wrapper a .box .copy:hover{
   border-bottom: 2px groove #141414;
-}
+} */
 
 .wrapper a .box .copy h2{
   border: none;
@@ -258,11 +258,15 @@ footer h2{
 }
 
 /* sketch-holder */
-#sketch-holder {
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  z-index: 10;
-  /* background-color: aqua; */
-  margin-left: 20px;
+#sketch{
+  justify-content: left;
+  /* margin-right: 50px; */
+  display: flex;
+  position: relative;
 }
+
+
+
+
+
+

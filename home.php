@@ -43,17 +43,20 @@
 
       <h1>YOU WILL SEE NEWS</h1>
 
+      <div id="sketch-holder">
+      </div>
+
       <div class="wrapper">
 
         <section class="line">
-
+        <div class="startNews">
         <a href="notizie.php?title=<?php echo $title1 ?>" onclick="increment()">
             <div class="box">
               <div class="copy">
                 <h2><?php echo $title1 ?></h2>
               </div>
               <div id="a" class="imgBox">
-                <img src="./img/notizie_recenti.jpg" alt="notizie recenti, foto di roman-kraft-_Zua2hyvTBk-unsplash">
+                <img src="./img/notizie_grafica.jpg" alt="notizie recenti, foto di roman-kraft-_Zua2hyvTBk-unsplash">
               </div>
             </div>
           </a>
@@ -64,11 +67,13 @@
                 <h2><?php echo $title2 ?></h2>
               </div>
               <div id="b" class="imgBox">
-                <img src="./img/politica.jpg" alt="">
+                <img src="./img/politica_grafica.jpg" alt="">
               </div>
             </div>
           </a>
+          </div>
 
+       <div class="startNews">
           <a href="economia.php?title=<?php echo $title3 ?>" onclick="increment()">
             <div class="box">
               <div class="copy">
@@ -91,40 +96,42 @@
 
             </div>
           </a>
-
+        </div>
         </section>
 
         <section class="line">
+        <div class="startNews">
+          <a href="cronaca.php?title=<?php echo $title5 ?>" onclick="increment()">
+              <div class="box">
+                <div class="copy">
+                  <h2><?php echo $title5 ?></h2>
+                </div>
+                <div id="e" class="imgBox">
+                  <img src="./img/cronaca_grafica.png" alt="cronaca">
+                </div>
+              </div>
+            </a>
 
-        <a href="cronaca.php?title=<?php echo $title5 ?>" onclick="increment()">
-            <div class="box">
-              <div class="copy">
-                <h2><?php echo $title5 ?></h2>
+            <a href="sport.php?title=<?php echo $title6 ?>" onclick="increment()">
+              <div class="box">
+                <div class="copy">
+                  <h2><?php echo $title6 ?></h2>
+                </div>
+                <div id="f" class="imgBox">
+                  <img src="./img/sport.jpg" alt="sport, foto thewayofcolor-jrkZbw4xguc-unsplash">
+                </div>
               </div>
-              <div id="e" class="imgBox">
-                <img src="./img/cronaca.jpg" alt="cronaca">
-              </div>
-            </div>
-          </a>
+            </a>
+        </div>
 
-          <a href="sport.php?title=<?php echo $title6 ?>" onclick="increment()">
-            <div class="box">
-              <div class="copy">
-                <h2><?php echo $title6 ?></h2>
-              </div>
-              <div id="f" class="imgBox">
-                <img src="./img/sport.jpg" alt="sport, foto thewayofcolor-jrkZbw4xguc-unsplash">
-              </div>
-            </div>
-          </a>
-
+        <div class="startNews">
           <a href="scienza_tecnologia.php?title=<?php echo $title7 ?>" onclick="increment()">
             <div class="box">
               <div class="copy">
                 <h2><?php echo $title7 ?></h2>
               </div>
               <div id="g" class="imgBox">
-                <img src="./img/scienza_tecnologia.jpg"
+                <img src="./img/scienza_tecnologia_grafica.png"
                   alt="scienza e tecnologia, foto di shane-rounce-1ZZ96uESRJQ-unsplash">
               </div>
             </div>
@@ -140,13 +147,12 @@
               </div>
             </div>
           </a>
-
+        </div>
         </section>
 
       </div>
       </div>
-       <div id="sketch-holder">
-      </div>
+    
 
       <a href="./index.html" , onclick="stop()">
         <div class="stop">
@@ -177,6 +183,10 @@
   
   //fine sessione
   function stop() {
+    if (localStorage.getItem('stop') == '1') {
+       localStorage.setItem('stop', '0')}
+    }
+
     $("stop").click(function(){
       var url = "analytics.php";
       $.ajax({
@@ -184,8 +194,10 @@
         url:url,
         data: data
       });
+      
+      $(this).localStorage.clear();
     });
-  };
+  
   
 </script>
 

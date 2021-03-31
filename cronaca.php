@@ -8,8 +8,8 @@ include 'headNews.php';
   }
   $(this).click(function (){
     var cr = Number(localStorage.getItem('Crnews'));
-    localStorage.setItem('Crnews', n + 1);
-    console.log(n);
+    localStorage.setItem('Crnews', cr + 1);
+    console.log(localStorage.getItem('Crnews'));
   });
       </script>
 <h1><?php echo ucfirst($title) ?><h1>

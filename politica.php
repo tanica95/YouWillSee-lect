@@ -8,9 +8,9 @@ include 'headNews.php';
   }
 
   $(this).click(function (){
-    var n = Number(localStorage.getItem('Pnews'));
-    localStorage.setItem('Pnews', n + 1);
-    console.log(n);
+    var p = Number(localStorage.getItem('Pnews'));
+    localStorage.setItem('Pnews', p + 1);
+    console.log(p);
   });
 
       </script>
