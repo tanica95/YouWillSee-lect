@@ -216,7 +216,7 @@ function draw() {
     }
 
     //-----particellare_1piccolo
-    if (localStorage.getItem('scienza_tenologia') == '1') {
+    if (localStorage.getItem('scienza_tecnologia') == '1') {
       console.log(st);
       push();
       if (frameCount % st == 0) {

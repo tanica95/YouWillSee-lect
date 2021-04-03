@@ -3,8 +3,8 @@ include 'headNews.php';
 ?>
 <script type="text/javascript" src="lib/node_modules/jquery-3.6.0.min.js"></script>
  <script type="text/javascript">
-  if (localStorage.getItem('scienza_tenologia') == '0') {
-    localStorage.setItem('scienza_tenologia', '1')
+  if (localStorage.getItem('scienza_tecnologia') == '0') {
+    localStorage.setItem('scienza_tecnologia', '1')
   }
   $(this).click(function (){
     var st = Number(localStorage.getItem('Stnews'));
