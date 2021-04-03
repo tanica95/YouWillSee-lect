@@ -9,12 +9,7 @@
 - jQuery rimosso
 
 
-
 #### **Da fare**
 
 - Controllarre il css, mi sembra a posto, ma non vorrei aver rotto qualcosa
 - Implementare p5.js. Non so come funziona e non me ne sono occupato. Cercate di non usare il JavaScript dentro dei tag script, ma create dei file appositi in assets/js e poi linkateli alle pagine in cui vi servono in modo che sia è tutto ordinato
-
-
-
-
