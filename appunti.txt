@@ -1,0 +1,12 @@
+Il progetto iniziale prevedeva una installazione, il tutto girava in locale e la comunicazione avveniva 
+tra la pagina web --> un ponte osc --> processing (java)
+
+Ora il sito è online ywsee.org e devo portare lo sketch da processing a p5 una libreria di javascript rifacendo la comunicazione tra i due.
+
+Gli input di cui ho bisogno sono:
+- pagina "index" - Start  per iniziare la sessione
+
+- pagina "home" - un input per macrocategoria, quindi ogni link cliccato deve essere comunicato allo 		  sketch.js 
+		- Stop per concludere la sessione 
+
+- pagine interne - sono 8 notizie per ogni macro categoria, stesso discorso della home

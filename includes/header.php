@@ -20,7 +20,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
         <!-- CSS -->
         <link rel="stylesheet" href="assets/styles/style.css?v=2">
+        
+        <script type="text/javascript" src="assets/js/p5.js"></script>
+        <script type="text/javascript" src="assets/js/p5.dom.js"></script>
+        <script type="text/javascript" src="assets/js/sketch.js"></script>
     </head>
 
     <body>
-        <header> You Will See (lect) </header>
+        <header>
+            <div>YWS</div>
+            <div>2021</div>
+        </header>

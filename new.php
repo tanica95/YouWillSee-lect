@@ -12,20 +12,16 @@
     if($data->status == 'ok') {
         // get articles
         $articles = $data->articles;
+    } else {
+        // Handle news API errors 
+        echo '<div class="api-error">
+                <h2>Si è verificato un errore imprevisto</h2>
+                <p>Sfortunamenete non possiamo mostrarti le news che stai cercando, ti consigliamo di tornare alle <a class="back" href="news.php">categorie</a> e a riprovare più tardi</p>
+            </div>';
     }
 ?>
 
 <main class="new">
-
-    <?php
-        // Handle news API errors 
-        if($data->status != 'ok'){
-            echo '<div class="api-error">
-                <h2>Si è verificato un errore imprevisto</h2>
-                <p>Sfortunamenete non possiamo mostrarti le news che stai cercando, ti consigliamo di tornare alle <a class="back" href="news.php">categorie</a> e a riprovare più tardi</p>
-            </div>';
-        }
-    ?>
 
     <a class="back" href="news.php">Torna alle categorie</a>
 
@@ -57,7 +53,7 @@
 
 </main>
 
-<script src="assets/js/new.js"></script>
+<script src="assets/js/start.js"></script>
 
 <?php
     include 'includes/footer.php';

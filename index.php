@@ -21,9 +21,7 @@
 
     </div>
 </main>
-
 <script src="assets/js/home.js"></script>
-
 <?php
     include 'includes/footer.php';
 ?>
