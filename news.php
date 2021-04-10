@@ -98,8 +98,7 @@ $news = array(
 
     <button id="stop" class="button">stop reading</button>
 </main>
-<script type="text/javascript" src="assets/js/stop.js"></script>
-<script type="text/javascript" src="assets/js/box_style.js"></script>
+
 <script type="text/javascript" src="assets/js/news.js"></script>
 
 <?php
