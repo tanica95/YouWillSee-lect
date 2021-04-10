@@ -11,8 +11,9 @@ include 'includes/header.php';
         <?php
         $numImg = 0;
         $dir_name = "assets/gallery/";
-        $images = glob($dir_name . "*.png");
-        foreach ($images as $img) {
+        $images = glob($dir_name . "*.{jpeg,jpg,png}", GLOB_BRACE);
+        // first 12 elements. And the others?
+        foreach (array_slice($images, 12) as $img) {
             echo '
             <div class="wrapper">
                 <div class="imgBox">
@@ -20,7 +21,6 @@ include 'includes/header.php';
                 </div>
             </div>
             ';
-            if (++$numImg == 12) break;
         }
         ?>
     </section>

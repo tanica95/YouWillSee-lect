@@ -73,15 +73,14 @@ function draw() {
   let Fco = lerpColor(from, to, 0.90);
 
   //var numero notizie lette
-
-  var n = map(Number(localStorage.getItem('Nnews')), 0, 8, 0.5, 3);
-  var p = map(Number(localStorage.getItem('Pnews')), 0, 8, 0.5, 3);
-  var e = Number(localStorage.getItem('Enews'));
-  var m = Number(localStorage.getItem('Mnews'));
-  var cr = map(Number(localStorage.getItem('Crnews')), 0, 8, -1, 7);
-  var s = map(Number(localStorage.getItem('Snews')), 0, 8, 0.1, 0.8);
-  var st = map(Number(localStorage.getItem('Stnews')), 0, 8, 8, 0);
-  var cu = map(Number(localStorage.getItem('Cunews')), 0, 8, 0, 4);
+  var n = map(Number(localStorage.getItem('N_notizierecenti')), 0, 8, 0.5, 3);
+  var p = map(Number(localStorage.getItem('N_politica')), 0, 8, 0.5, 3);
+  var e = Number(localStorage.getItem('N_economia'));
+  var m = Number(localStorage.getItem('N_dalmondo'));
+  var cr = map(Number(localStorage.getItem('N_cronaca')), 0, 8, -1, 7);
+  var s = map(Number(localStorage.getItem('N_sport')), 0, 8, 0.1, 0.8);
+  var st = map(Number(localStorage.getItem('N_scienzaetecnologia')), 0, 8, 8, 0);
+  var cu = map(Number(localStorage.getItem('N_cultura')), 0, 8, 0, 4);
 
   //da punti a vettori 
   points.push(createVector(x, y, z));
@@ -89,8 +88,8 @@ function draw() {
   points.forEach(function (vec) {
 
     //-----nucleo centrale_1
-    if (localStorage.getItem('notizie') == '1') {
-      console.log('notizie');
+    if (localStorage.getItem('notizierecenti') == '1') {
+      console.log('notizierecenti');
       push();
       rotateY(-frameCount * radians(1.5));
      // fill(63, 160, 224, 150);
@@ -165,8 +164,8 @@ function draw() {
     }
 
     //-----nucleo centrale_4
-    if (localStorage.getItem('mondo') == '1') {
-      console.log('mondo');
+    if (localStorage.getItem('dalmondo') == '1') {
+      console.log('dalmondo');
       push();
       rotateZ(-frameCount * radians(1.9));
      // fill(5, 103, 250,150);
@@ -220,7 +219,7 @@ function draw() {
     }
 
     //-----particellare_1piccolo
-    if (localStorage.getItem('scienza_tenologia') == '1') {
+    if (localStorage.getItem('scienzaetecnologia') == '1') {
       console.log(st);
       push();
       if (frameCount % st == 0) {

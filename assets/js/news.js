@@ -1,15 +1,3 @@
-// stilizzazione categorie + sketch dopo che è stato attivaato il canvas p5.js
-if (localStorage.getItem('start') == '1') {
-    /* 
-    *   BUG
-    */
-    // var container = document.getElementById('category-sketch');
-    // container.classList.remove('wrapper');
-    // container.classList.add('wrapper-sketch');
-    // var noline = document.getElementsByClassName('line');
-    // noline.classList.remove('line');
-}
-
 document.querySelector('#stop').addEventListener('click', () => {
     // clear localstorage and trigger p5.js
     if (localStorage.getItem('stop') == '1') {
