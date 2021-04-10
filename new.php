@@ -53,7 +53,23 @@
 
 </main>
 
-<script src="assets/js/start.js"></script>
+<script type="text/javascript">
+    let item = '<?php echo str_replace(' ', '', strtolower($title))?>';
+    // start
+    if (localStorage.getItem('start') == '0') {
+        localStorage.setItem('start', '1');
+    }
+    // category
+    localStorage.setItem(item, '1');
+    //number of news
+    for(let link of document.querySelectorAll('a.containerNews')){
+        link.addEventListener('click', () => {
+            let value = parseInt(localStorage.getItem('N_' + item)) || 0;
+            localStorage.setItem('N_' + item, value + 1);
+            console.log({item: 'N_' + item, value: localStorage.getItem(item)});
+        });
+    }
+</script>
 
 <?php
     include 'includes/footer.php';
