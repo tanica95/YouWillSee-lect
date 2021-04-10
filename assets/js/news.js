@@ -5,7 +5,7 @@ document.querySelector('#stop').addEventListener('click', () => {
     }
     // get image from canvas and send it
     const canvas = document.querySelector('canvas#sketch');
-    // Check if the canvas exist
+    // Check if the canvas exists
     if (canvas){
         canvas.toBlob((blob) => {
             /* --- AJAX --- */
