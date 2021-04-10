@@ -4,25 +4,29 @@ document.querySelector('#stop').addEventListener('click', () => {
         localStorage.setItem('stop', '0');
     }
     // get image from canvas and send it
-    document.querySelector('canvas#sketch').toBlob((blob) => {
-        /* --- AJAX --- */
-        const formData = new FormData();
-        formData.append('image', blob, 'image.jpeg');
-        const xhr = new XMLHttpRequest();
-        // set the endpoint
-        xhr.open('POST', 'endpoints/saveImage.php');
-        // receive response from the endpoint
-        xhr.onload = () => {
-            if (xhr.status == 200){
-                const response = JSON.parse(xhr.responseText);
-                console.log(response);
-            } else {
-                console.error('Error', xhr.status)
+    const canvas = document.querySelector('canvas#sketch');
+    // Check if the canvas exist
+    if (canvas){
+        canvas.toBlob((blob) => {
+            /* --- AJAX --- */
+            const formData = new FormData();
+            formData.append('image', blob, 'image.jpeg');
+            const xhr = new XMLHttpRequest();
+            // set the endpoint
+            xhr.open('POST', 'endpoints/saveImage.php');
+            // receive response from the endpoint
+            xhr.onload = () => {
+                if (xhr.status == 200){
+                    const response = JSON.parse(xhr.responseText);
+                    console.log(response);
+                } else {
+                    console.error('Error', xhr.status)
+                }
             }
-        }
-        // send data
-        xhr.send(formData);
-    });
+            // send data
+            xhr.send(formData);
+        });
+    }
 });
 
 /* richard was here
