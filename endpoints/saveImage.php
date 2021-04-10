@@ -10,7 +10,7 @@ if(isset($_FILES['image'])){
         if(move_uploaded_file($_FILES['image']['tmp_name'], $path)){
             echo json_encode(array("ok" => 'Image saved.'));
         } else {
-            echo json_encode(array("error" => array($_FILES['image']['tmp_name'], $path, $extension)));
+            echo json_encode(array("error" => 'Image not saved.'));
         }            
     } else {
         echo json_encode(array('error' => 'Upload failed.')); 

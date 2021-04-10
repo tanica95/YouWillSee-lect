@@ -1,20 +1,11 @@
 // Clean locale storage
 localStorage.clear();
+// info
 localStorage.setItem('start', '0');
 localStorage.setItem('stop', '1');
-localStorage.setItem('notizie', '0');
-localStorage.setItem('politica', '0');
-localStorage.setItem('economia', '0');
-localStorage.setItem('mondo', '0');
-localStorage.setItem('cronaca', '0');
-localStorage.setItem('sport', '0');
-localStorage.setItem('scienza_tenologia', '0');
-localStorage.setItem('cultura', '0');
-localStorage.setItem('Nnews', '0');
-localStorage.setItem('Pnews', '0');
-localStorage.setItem('Enews', '0');
-localStorage.setItem('Mnews', '0');
-localStorage.setItem('Crnews', '0');
-localStorage.setItem('Snews', '0');
-localStorage.setItem('Stnews', '0');
-localStorage.setItem('Cunews', '0');
+// news
+const items = ['notizierecenti', 'politica', 'economia', 'dalmondo', 'cronaca', 'sport', 'scienzaetecnologia', 'cultura'];
+for(let item of items){
+    localStorage.setItem(item, '0');
+    localStorage.setItem('N_' + item, '0');
+}
