@@ -7,7 +7,7 @@
     $newsLength = 8;
     $url = 'http://newsapi.org/v2/everything?q='. $_GET['query'] . '&language=it&pageSize=' . $newsLength . '&apiKey=703a4f88090c47a7b974572dcebfe75e';
     $data = json_decode(file_get_contents($url));
-    
+
     $articles = array();
     if($data->status == 'ok') {
         // get articles

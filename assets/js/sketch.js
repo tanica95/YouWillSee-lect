@@ -1,8 +1,7 @@
 
 var points = [];
-var news = 0;
 
-//teorema di lorenz
+//attrattore di lorenz
 var x = 0.01;
 var y = 0;
 var z = 0;
@@ -13,7 +12,7 @@ var a = 10;
 var b = 28;
 var c = 8.0 / 3.0;
 
-var data;
+//var data;
 let url = 'analytics.php';
 
 var cnv;
@@ -21,12 +20,11 @@ var cnv;
 function setup() {
   smooth();
   if (localStorage.getItem('start') == '1') { 
-    var cnv = createCanvas(400, 400, WEBGL);
+    var cnv = createCanvas(500, 500, WEBGL);
     cnv.parent("sketch-holder");
     cnv.id('sketch');
     console.log('start');
     
-   
     setAttributes('antialias', true);
     // cnv.removeClass('hided');
     // cnv.addClass('showed');
@@ -77,13 +75,15 @@ function draw() {
   var p = map(Number(localStorage.getItem('N_politica')), 0, 8, 0.5, 3);
   var e = Number(localStorage.getItem('N_economia'));
   var m = Number(localStorage.getItem('N_dalmondo'));
-  var cr = map(Number(localStorage.getItem('N_cronaca')), 0, 8, -1, 7);
-  var s = map(Number(localStorage.getItem('N_sport')), 0, 8, 0.1, 0.8);
+  var cr = map(Number(localStorage.getItem('N_cronaca')), 0, 8, 0.5, 5);
+  var s = map(Number(localStorage.getItem('N_sport')), 0, 8, 0.2, 0.9);
   var st = map(Number(localStorage.getItem('N_scienzaetecnologia')), 0, 8, 8, 0);
   var cu = map(Number(localStorage.getItem('N_cultura')), 0, 8, 0, 4);
 
+  
   //da punti a vettori 
   points.push(createVector(x, y, z));
+  
   // loop da punti a vettori 
   points.forEach(function (vec) {
 
@@ -92,9 +92,7 @@ function draw() {
       console.log('notizierecenti');
       push();
       rotateY(-frameCount * radians(1.5));
-     // fill(63, 160, 224, 150);
       noStroke();
-      // var n = Number(localStorage.getItem('Nnews'));
       if (n > 0) {
           scale(n);
         } else {
@@ -102,7 +100,6 @@ function draw() {
       }
       translate(vec.x / 1.5, vec.y / 1.5, vec.z / 2);
       translate(-5, -5, -5);
-     // ambientMaterial(28, 70, 186, 180);
        ambientMaterial(71, 180, 252, 160);
       // specularColor(63, 160, 224);
       // specularMaterial(63, 160, 224);
@@ -116,7 +113,6 @@ function draw() {
       console.log('politica');
       push();
       rotateZ(frameCount * radians(1.8));
-      //fill(241, 165, 242, 180);
       noStroke();
       scale(0.7);
       translate(vec.x + p, vec.y + p, vec.z + p);
@@ -158,7 +154,6 @@ function draw() {
       scale(1);
       translate(vec.x / 2, vec.y / 2, vec.z / 2);
       translate(-5, -5, -5);
-      // ambientMaterial(37, 189, 245, 120);
       ellipsoid(5, 5, 5, 5, 5);
       pop();
     }
@@ -166,14 +161,13 @@ function draw() {
     //-----nucleo centrale_4
     if (localStorage.getItem('dalmondo') == '1') {
       console.log('dalmondo');
+      
       push();
+      rotateY(-80);
       rotateZ(-frameCount * radians(1.9));
-     // fill(5, 103, 250,150);
       noStroke();
-      scale(1.5);
+      scale(1.2);
       translate(vec.x / 2, vec.y / 2, vec.z / 2);
-      translate(-5, -5, -5);
-     // ambientMaterial(16, 72, 227, 120);
        ambientMaterial(3, 74, 255, 150);
       // specularColor(21, 81, 232);
       // specularMaterial(21, 81, 232);
@@ -186,12 +180,11 @@ function draw() {
     if (localStorage.getItem('cronaca') == '1') {
       console.log(cr);
       push();
-        //noiseDetail(cr, 0.5);
-        //let nois = noiseSeed(cr);
         noStroke();
-        translate(p5.Vector.fromAngles(50 + vec.x + cr, 50 + vec.y + cr, 50 + vec.z + cr));
-        ambientMaterial(hu, 185, 195, 130);
-        sphere(2);
+        translate(p5.Vector.fromAngles(50 + vec.x - cr , 50 + vec.y - cr , 50 + vec.z - cr));
+        stroke(hu, 185, 195, 130)
+        strokeWeight(2+cr);
+        point(0,0,0);
         hu += 1;
         if (hu > 255) {
           hu = 0;
@@ -205,8 +198,6 @@ function draw() {
       push();
         noStroke();
         rotate(280);
-       // rotateX(frameCount * radians(-2.5) * 0.01);
-       // rotateY(frameCount * radians(-2.5) * 0.01);
         rotateZ(frameCount * radians(-2.5) * 0.01);
         translate(p5.Vector.fromAngles(50 + vec.x*cu , 50 + vec.y*cu, 50 + vec.z*cu ));
         ambientMaterial(140, 145, hu, 150);
@@ -224,12 +215,10 @@ function draw() {
       push();
       if (frameCount % st == 0) {
         noStroke();
-        rotateX(frameCount * radians(-1.9) * 0.1);
-      //  rotateY(frameCount * radians(-1.9) * 0.1);
-      // rotateZ(frameCount * radians(-1.9) * 0.1);
+        rotateX(frameCount * radians(-1.9) * 0.2);
         translate(p5.Vector.fromAngles(30 + vec.x, 30 + vec.y, 30 + vec.z));
         ambientMaterial(20, 100, hu, 150);
-        sphere(1.5);
+        box(1.5);
       }
       hu += 1;
       if (hu > 255) {
@@ -245,15 +234,13 @@ function draw() {
       translate(0, 0, 20);
       rotate(280);
       noStroke();
-    //  rotateX(frameCount * radians(-1.9) * s);
-      rotateY(frameCount * radians(-1.9) * s);
-     // rotateZ(frameCount * radians(-1.9) * s);
+    if (s > 0){
+        rotateY(frameCount * radians(-1.5) * s);
+      } else { s = 0.1;
+              rotateY(frameCount * radians(-0.5) * s);
+        }
       translate(p5.Vector.fromAngles( 22 + vec.x, 22 + vec.y, 22 + vec.z));
-     // ambientMaterial(20, 80, hu, 60);
-      ambientMaterial(hu, 55, 255, 100);
-      // specularColor(hu, 185, 195);
-      // specularMaterial(hu, 185, 195);
-      // shininess(60);
+      ambientMaterial(hu, 55, 255, 80);
       sphere(1.5);
       hu += 1;
       if (hu > 255) {
@@ -262,26 +249,12 @@ function draw() {
       pop();
     }
 
-    //----elettrone 1
-    // for (let i = 1; i < frameCount; i = i + 10) {
-    //   push();
-    //   translate(0, 0, -80);
-    //   fill(200, 119, 179, 50);
-    //   ambientMaterial(200, 119, 179, 50);
-    //   noStroke();
-    //   rotateX(frameCount / 10);
-    //   rotateZ(frameCount / 10);
-    //   translate(20, 20, vec.z);
-    //   //translate(vec.x*2.3, vec.y*2.5, vec.z/2.2);
-    //   ellipsoid(5, 5, 5, 10, 10);
-    //   //rotateX(radians(sin));
-    //   pop();
-    // }
+
   }); //end forEach
 
 /* save frames */
 if (localStorage.getItem('stop') == '0'){
-  saveCanvas(cnv, 'myBubble.png');
+  saveCanvas(cnv, 'myBubble.jpg');
   localStorage.clear();
   // saveFrame('YWS-bubble'+ "-" 
   //            + nf(year(), 2) 
@@ -294,6 +267,4 @@ if (localStorage.getItem('stop') == '0'){
   //   print(data);
   // });
 }
-
-
 }  //end draw

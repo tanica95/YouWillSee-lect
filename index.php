@@ -9,12 +9,12 @@
 
       <h1>YOU WILL SEE NEWS</h1>
 
-      <h3 class="welcome">WELCOME TO THIS NEW PLATFORM</h3>
+      <h3 class="welcome">BENVENUTI SU QUESTA NUOVA PIATTAFORMA</h3>
 
-      <p class="light">Feel free to read the news.
-        Click start to begin your experience. <br>
-        When you will finish your reading please press the button <b>stop reading</b><br>
-        that you will find in the following page.
+      <p class="light">Sentitevi liberi di leggere le notizie.
+        Premete start per iniziare l'esperienza. <br>
+        Quando vorrete terminare la lettura, premete il bottone <b>stop reading</b><br>
+        che troverete nella pagina seguente.
       </p>
 
       <a class="button" href="news.php">start</a>
