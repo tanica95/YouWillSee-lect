@@ -91,12 +91,14 @@ $news = array(
             }
             ?>
         </section>
+
         <div id="sketch-holder"></div>
     </div>
 
     <a class="link-bubble" href="results.php">Gallery</a>
 
     <button id="stop" class="button">stop reading</button>
+    
 </main>
 
 <script type="text/javascript" src="assets/js/news.js"></script>

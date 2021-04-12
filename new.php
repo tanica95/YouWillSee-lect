@@ -25,7 +25,7 @@
 
     <a class="back" href="news.php">Torna alle categorie</a>
 
-    <h1><?php echo $title ?></h1>
+    <h2><?php echo $title ?></h2>
     
     <?php 
         foreach($articles as $article){

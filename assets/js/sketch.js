@@ -40,14 +40,14 @@ function draw() {
   background(224, 255, 255);
   //directionalLight(128,128,128, 0, 0, -1);
  // ambientLight(180, 180, 200);
-  pointLight(255, 241, 230, 0, -height/2, -50);
+  pointLight(255, 241, 230, 0, -height/2, 100);
   //----studio luci
-  pointLight(255, 221, 217, - width/2, -height/2, 0);
-  pointLight(255, 221, 217, 0, -height/2, 0);
-  pointLight(217, 252, 245,  width/2, 0, 0);
- // pointLight(200, 200, 200,  -width/2, height/2, 0);
+  pointLight(255, 221, 217, - width/2, -height/2, 100);
+  pointLight(255, 221, 217, 0, -height/2, 100);
+  pointLight(217, 252, 245,  width/2, 0, 100);
+  pointLight(200, 200, 200,  width/2, height/2, 100);
  // pointLight(200, 200, 200,  width/2, -height/2, 0);
-  translate(0,0,50);
+  translate(0,0, 80);
   //console.log('start');
 
   // equazione di Lorenz
@@ -61,8 +61,8 @@ function draw() {
 
   // colori
   let hu = 0;
-  let from = color(230, 94, 211, 120);
-  let to = color(72, 53, 196, 120);
+  let from = color(230, 94, 211, 230);
+  let to = color(72, 53, 196, 230);
   let Aco = lerpColor(from, to, 0.11);
   let Bco = lerpColor(from, to, 0.35);
   let Cco = lerpColor(from, to, 0.55);
@@ -72,13 +72,13 @@ function draw() {
 
   //var numero notizie lette
   var n = map(Number(localStorage.getItem('N_notizierecenti')), 0, 8, 0.5, 3);
-  var p = map(Number(localStorage.getItem('N_politica')), 0, 8, 0.5, 3);
+  var p = map(Number(localStorage.getItem('N_politica')), 0, 8, 1, 6);
   var e = Number(localStorage.getItem('N_economia'));
   var m = Number(localStorage.getItem('N_dalmondo'));
   var cr = map(Number(localStorage.getItem('N_cronaca')), 0, 8, 0.5, 5);
   var s = map(Number(localStorage.getItem('N_sport')), 0, 8, 0.2, 0.9);
   var st = map(Number(localStorage.getItem('N_scienzaetecnologia')), 0, 8, 8, 0);
-  var cu = map(Number(localStorage.getItem('N_cultura')), 0, 8, 0, 4);
+  var cu = map(Number(localStorage.getItem('N_cultura')), 0, 8, 0.2, 5);
 
   
   //da punti a vettori 
@@ -100,7 +100,7 @@ function draw() {
       }
       translate(vec.x / 1.5, vec.y / 1.5, vec.z / 2);
       translate(-5, -5, -5);
-       ambientMaterial(71, 180, 252, 160);
+       ambientMaterial(71, 180, 252, 200);
       // specularColor(63, 160, 224);
       // specularMaterial(63, 160, 224);
       // shininess(40);
@@ -111,13 +111,15 @@ function draw() {
     //-----nucleo centrale_2
     if (localStorage.getItem('politica') == '1') {
       console.log('politica');
+      
       push();
       rotateZ(frameCount * radians(1.8));
       noStroke();
-      scale(0.7);
-      translate(vec.x + p, vec.y + p, vec.z + p);
-      translate(-5, 5, -5);
-      ambientMaterial(2, 13, 173,140);
+      scale(0.5);
+      translate(-5, -5, -20);
+      translate(vec.x + dx*p, vec.y + p, vec.z + p);
+      //
+      ambientMaterial(2, 13, 173);
       // specularColor(241, 165, 223);
       // specularMaterial(241, 165, 223);
       // shininess(60);
@@ -163,12 +165,13 @@ function draw() {
       console.log('dalmondo');
       
       push();
+      translate(-10,0,0);
       rotateY(-80);
       rotateZ(-frameCount * radians(1.9));
       noStroke();
       scale(1.2);
       translate(vec.x / 2, vec.y / 2, vec.z / 2);
-       ambientMaterial(3, 74, 255, 150);
+       ambientMaterial(3, 74, 255, 200);
       // specularColor(21, 81, 232);
       // specularMaterial(21, 81, 232);
       // shininess(100);
@@ -199,7 +202,9 @@ function draw() {
         noStroke();
         rotate(280);
         rotateZ(frameCount * radians(-2.5) * 0.01);
-        translate(p5.Vector.fromAngles(50 + vec.x*cu , 50 + vec.y*cu, 50 + vec.z*cu ));
+        if (cu > 0) {
+        translate(p5.Vector.fromAngles(50 + vec.x*cu , 50 + vec.y*cu, 50 + vec.z*cu ));}
+        else { translate(p5.Vector.fromAngles(50 + vec.x , 50 + vec.y, 50 + vec.z )); }
         ambientMaterial(140, 145, hu, 150);
         cone(3, 5, 3);
       hu += 1;
@@ -241,7 +246,7 @@ function draw() {
         }
       translate(p5.Vector.fromAngles( 22 + vec.x, 22 + vec.y, 22 + vec.z));
       ambientMaterial(hu, 55, 255, 80);
-      sphere(1.5);
+      sphere(1);
       hu += 1;
       if (hu > 255) {
         hu = 0;

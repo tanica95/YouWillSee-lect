@@ -28,7 +28,7 @@ main {
 }
 
 /* Typography */
-h1{
+h1 {
     font-size: 8rem;
     line-height: 9rem;
     border-style: hidden;
@@ -37,6 +37,7 @@ h1{
     color: #141414;
     margin: 0;
 }
+
 p {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
@@ -78,6 +79,18 @@ a{
     align-items: center;
 }
 
+.header-top{
+    display: flex;
+    align-items: center;
+}
+
+.img-home{
+    width: 20px;
+    height: 20px;
+    margin: 0px 12px;
+    
+    
+}
 /* News folder */
 .wrapper {
     width: 60%;
@@ -86,6 +99,21 @@ a{
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.wrapper-res{
+    width: 80%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.img-res{
+    width: 23%;
+    margin: 0px 12px;
+    margin-bottom: 24px;
 }
 
 .wrapper a{
@@ -101,9 +129,10 @@ a{
     align-items: flex-end;
     justify-content: center;
     font-weight: 500;
-    height: 90px;
+    height: 60px;
+    margin-top: 30px;
     border-bottom: 2px solid transparent;
-    padding: 4px 0;
+    
 }
 .wrapper a .box .copy h2{
     border: none;
@@ -130,6 +159,18 @@ main.new{
     padding-top: 10px;
 }
 
+.new h2{
+    font-size: 4.5rem;
+    line-height: 6rem;
+    border-style: hidden;
+    border-bottom-style: groove;
+    padding: 20px 0; 
+    color: #141414;
+    margin: 0;
+    padding-left: 50px;
+    
+}
+
 a.back, .link-bubble{
     text-decoration: underline;
     margin-top: 20px;
@@ -150,7 +191,6 @@ a.back{
 
 .containerNews{
     display: flex;
-    align-items: center;
     margin: 10px;
     transition: .1s ease-in-out;
 }
@@ -168,6 +208,7 @@ a.back{
     width: 180px;
     height: 180px;
     border-radius: 16px;
+    margin-top: 0px;
 }
 .newshref {
     font-size: 32px;
@@ -287,12 +328,50 @@ img{
     #sketch-flex{
         flex-direction: column;
     }
+
+    .newshref {
+        font-size: 21px;
+        line-height: 28px;
+        font-weight: 700;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
 }
 
-@media only screen and (max-width: 368px) {
+@media only screen and (max-width: 620px) {
 
     h1 {
         font-size: 72px;
         line-height: 100px;
+    }
+
+    .new h2{
+        font-size: 2.5rem;
+        line-height: 4rem;
+        padding: 20px 0; 
+        padding-left: 10px;
+        
+    }
+
+    .imgsize{
+        margin: 20px;
+        width: 100px;
+        height: 100px;
+        border-radius: 8px;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .newsbody {
+        font-size: 12px;
+        line-height: 24px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+
+    .imgsize{
+        width: 60px;
+        height: 60px;
     }
 }

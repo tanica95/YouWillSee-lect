@@ -10,7 +10,7 @@ document.querySelector('#stop').addEventListener('click', () => {
         canvas.toBlob((blob) => {
             /* --- AJAX --- */
             const formData = new FormData();
-            formData.append('image', blob, 'image.jpeg');
+            formData.append('image', blob, 'image.jpg');
             const xhr = new XMLHttpRequest();
             // set the endpoint
             xhr.open('POST', 'endpoints/saveImage.php');

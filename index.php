@@ -11,7 +11,7 @@
 
       <h3 class="welcome">BENVENUTI SU QUESTA NUOVA PIATTAFORMA</h3>
 
-      <p class="light">Sentitevi liberi di leggere le notizie.
+      <p class="light">
         Premete start per iniziare l'esperienza. <br>
         Quando vorrete terminare la lettura, premete il bottone <b>stop reading</b><br>
         che troverete nella pagina seguente.
