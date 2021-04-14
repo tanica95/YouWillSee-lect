@@ -14,6 +14,12 @@ var c = 8.0 / 3.0;
 
 //var data;
 let url = 'analytics.php';
+//var img;
+//let image_360;
+//const img = createImg('assets/images/360-arrow.png');
+//  function preload() {
+//    img = loadImage('assets/images/360-arrow.png');
+//  }
 
 var cnv;
 
@@ -24,23 +30,34 @@ function setup() {
     cnv.parent("sketch-holder");
     cnv.id('sketch');
     console.log('start');
-    
+    //image_360 = createGraphics(500, 600).clear();
     setAttributes('antialias', true);
-    // cnv.removeClass('hided');
-    // cnv.addClass('showed');
-    // easycam = createEasyCam();
     colorMode(RGB, 255, 255, 255);
     setFrameRate(16);
+   // loadImage('assets/images/360-arrow.png', img => {
+      //image(img, 0, 0);
+    });
   }
 }
 
 function draw() {
+ // img.resize(40,40);
+ // image(img, 0, 0, 20, 20);
+  // image_360.image(img,200,250,0);
+  // image(image_360,0,0);
+ // image(img, 220, 220, 25, 25);
   orbitControl();
   frameRate(10);
+ 
+  
   background(224, 255, 255);
+  //image(img, 220, 220, 25, 25);
+  //image(image_360,0,0);
+   
+  
   //directionalLight(128,128,128, 0, 0, -1);
  // ambientLight(180, 180, 200);
-  pointLight(255, 241, 230, 0, -height/2, 100);
+ // pointLight(255, 241, 230, 0, -height/2, 100);
   //----studio luci
   pointLight(255, 221, 217, - width/2, -height/2, 100);
   pointLight(255, 221, 217, 0, -height/2, 100);
@@ -75,9 +92,9 @@ function draw() {
   var p = map(Number(localStorage.getItem('N_politica')), 0, 8, 1, 6);
   var e = Number(localStorage.getItem('N_economia'));
   var m = Number(localStorage.getItem('N_dalmondo'));
-  var cr = map(Number(localStorage.getItem('N_cronaca')), 0, 8, 0.5, 5);
+  var cr = map(Number(localStorage.getItem('N_cronaca')), 0, 8, 0.5, 10);
   var s = map(Number(localStorage.getItem('N_sport')), 0, 8, 0.2, 0.9);
-  var st = map(Number(localStorage.getItem('N_scienzaetecnologia')), 0, 8, 8, 0);
+  var st = map(Number(localStorage.getItem('N_scienzaetecnologia')), 0, 8, 4, 0);
   var cu = map(Number(localStorage.getItem('N_cultura')), 0, 8, 0.2, 5);
 
   
@@ -218,12 +235,14 @@ function draw() {
     if (localStorage.getItem('scienzaetecnologia') == '1') {
       console.log(st);
       push();
+      rotateX(-180);
+      rotateY(-100);
       if (frameCount % st == 0) {
         noStroke();
         rotateX(frameCount * radians(-1.9) * 0.2);
         translate(p5.Vector.fromAngles(30 + vec.x, 30 + vec.y, 30 + vec.z));
-        ambientMaterial(20, 100, hu, 150);
-        box(1.5);
+        ambientMaterial(40, 150, hu, 220);
+        box(1.7);
       }
       hu += 1;
       if (hu > 255) {

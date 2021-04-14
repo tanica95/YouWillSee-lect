@@ -87,9 +87,7 @@ a{
 .img-home{
     width: 20px;
     height: 20px;
-    margin: 0px 12px;
-    
-    
+    margin: 0px 12px;   
 }
 /* News folder */
 .wrapper {
@@ -146,6 +144,10 @@ a{
 
 #sketch{
     margin-right: 40px;
+}
+
+#defaultCanvas0{
+    display: none;
 }
 
 /* News */
@@ -208,14 +210,14 @@ a.back{
     width: 180px;
     height: 180px;
     border-radius: 16px;
-    margin-top: 0px;
+    margin-top: 10px;
 }
 .newshref {
     font-size: 32px;
     line-height: 32px;
     font-weight: 700;
     color: #333333;
-    margin-top: -10px;
+    margin-top: 5px;
     margin-bottom: 10px;
 }
 .newsbody {
@@ -353,15 +355,25 @@ img{
         
     }
 
-    .imgsize{
-        margin: 20px;
-        width: 100px;
-        height: 100px;
-        border-radius: 8px;
-        margin-top: 0px;
-        margin-left: 0px;
+    .img-res {
+        width:40%;
     }
 
+    .imgsize{
+        margin: 40px;
+        width: 180px;
+        height: 180px;
+        border-radius: 16px;
+        margin-top: 10px;
+    }
+    .newshref {
+        font-size: 32px;
+        line-height: 32px;
+        font-weight: 700;
+        color: #333333;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
     .newsbody {
         font-size: 12px;
         line-height: 24px;
