@@ -34,10 +34,9 @@ function setup() {
     setAttributes('antialias', true);
     colorMode(RGB, 255, 255, 255);
     setFrameRate(16);
-   // loadImage('assets/images/360-arrow.png', img => {
-      //image(img, 0, 0);
-    });
-  }
+    // loadImage('assets/images/360-arrow.png', img => {
+    //image(img, 0, 0);
+  };
 }
 
 function draw() {
